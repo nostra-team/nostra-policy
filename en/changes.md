@@ -1,0 +1,17 @@
+---
+layout: "compare"
+title: "Compare versions · Nostra"
+heading: "Compare versions"
+app: "Nostra"
+lang: "en"
+root: "../"
+privacy_word: "Privacy Policy"
+terms_word: "Terms of Service"
+before_word: "Before"
+after_word: "After"
+back_url: "../en/index.html"
+other_lang: "한국어"
+other_lang_url: "../changes.html"
+contact_word: "Contact"
+contact: "psj06201@gmail.com"
+---

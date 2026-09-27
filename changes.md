@@ -1,0 +1,17 @@
+---
+layout: "compare"
+title: "변경 내용 비교 · Nostra"
+heading: "변경 내용 비교"
+app: "Nostra - 로또의 모든것"
+lang: "ko"
+root: ""
+privacy_word: "개인정보처리방침"
+terms_word: "이용약관"
+before_word: "이전"
+after_word: "이후"
+back_url: "index.html"
+other_lang: "English"
+other_lang_url: "en/changes.html"
+contact_word: "문의"
+contact: "psj06201@gmail.com"
+---

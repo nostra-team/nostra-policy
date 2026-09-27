@@ -1,15 +1,39 @@
 ---
-title: 이용약관 · Nostra
+layout: policy
+root: ""
+title: "이용약관 · Nostra"
+heading: "이용약관"
+app: "Nostra - 로또의 모든것"
 lang: ko
+doc: terms
+effective: "2026-09-12"
+effective_label: "2026. 09. 12"
+status: current
+status_label: "현행"
+other_doc: "개인정보처리방침"
+other_doc_url: "index.html"
+other_lang: "English"
+other_lang_url: "en/terms.html"
+effective_word: "시행일"
+contact_word: "문의"
+contact: "psj06201@gmail.com"
+versions:
+  - date: "2026-11-01"
+    label: "2026. 11. 01"
+    status: upcoming
+    status_label: "시행 예정"
+    url: "terms/2026-11-01.html"
+  - date: "2026-10-04"
+    label: "2026. 10. 04"
+    status: upcoming
+    status_label: "시행 예정"
+    url: "terms/2026-10-04.html"
+  - date: "2026-09-12"
+    label: "2026. 09. 12"
+    status: current
+    status_label: "현행"
+    url: "terms/2026-09-12.html"
 ---
-
-**Nostra - 로또의 모든것**
-
-# 이용약관
-
-[개인정보처리방침](index.html) · [English](en/terms.html)
-
-**시행일: 2026-09-12** (현행)
 
 > 개정판이 **2026-10-04** 부터 시행됩니다 → [2026-10-04 판](terms/2026-10-04.html)
 
@@ -85,13 +109,3 @@ lang: ko
 ## 문의
 
 약관 관련 문의는 아래 이메일로 보내 주세요.
-
----
-
-### 시행일별 판
-
-- [2026-11-01](terms/2026-11-01.html) — 시행 예정
-- [2026-10-04](terms/2026-10-04.html) — 시행 예정
-- [2026-09-12](terms/2026-09-12.html) — 현행
-
-문의: [psj06201@gmail.com](mailto:psj06201@gmail.com)
