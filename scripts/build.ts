@@ -25,7 +25,7 @@
  * Node 22 의 `--experimental-strip-types` 로 타입만 지우고 돌린다 — 컴파일 단계도, 런타임 의존성도 없다.
  */
 
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
@@ -248,6 +248,20 @@ const main = async (): Promise<number> => {
   put(join(ROOT, 'index.md'), redirectPage('privacy'));
   put(join(ROOT, 'en', 'index.md'), redirectPage('privacy'));
   put(join(ROOT, 'en', 'changes.md'), comparePage('en', 1));
+  // 판을 원본에서 지우면(출시 전에 뺀 09-12 · 10-04 처럼) 목록에서만 빠지고 파일은 남는다 —
+  // 드롭다운에는 없는데 주소로는 열리는 판이 생긴다. 판을 싣는 폴더에서 이번에 쓰지 않은 파일을 지운다.
+  const keep = new Set(written);
+  for (const dir of ['privacy', 'terms', 'en/privacy', 'en/terms', 'data/privacy', 'data/terms']) {
+    const abs = join(ROOT, dir);
+    if (!existsSync(abs)) continue;
+    for (const f of readdirSync(abs)) {
+      const p = join(abs, f);
+      if (/\.(md|json)$/.test(f) && !keep.has(p)) {
+        rmSync(p);
+        console.log(`✗ ${relative(ROOT, p)} (원본에 없는 판)`);
+      }
+    }
+  }
   for (const p of written) console.log(`→ ${relative(ROOT, p)}`);
   return 0;
 };
