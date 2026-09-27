@@ -1,6 +1,6 @@
 ---
 layout: policy
-root: "../"
+root: "../../"
 title: "Terms of Service · Nostra"
 heading: "Terms of Service"
 app: "Nostra"
@@ -11,9 +11,9 @@ effective_label: "2026-09-12"
 status: current
 status_label: "Current"
 other_doc: "Privacy Policy"
-other_doc_url: "../en/privacy"
+other_doc_url: "../../en/privacy"
 other_lang: "한국어"
-other_lang_url: "../terms"
+other_lang_url: "../../terms"
 effective_word: "Effective"
 contact_word: "Contact"
 contact: "psj06201@gmail.com"
@@ -23,20 +23,20 @@ versions:
     label: "2026-11-01"
     status: upcoming
     status_label: "Upcoming"
-    url: "../en/terms/2026-11-01"
+    url: "../../en/terms/2026-11-01"
   - date: "2026-10-04"
     label: "2026-10-04"
     status: upcoming
     status_label: "Upcoming"
-    url: "../en/terms/2026-10-04"
+    url: "../../en/terms/2026-10-04"
   - date: "2026-09-12"
     label: "2026-09-12"
     status: current
     status_label: "Current"
-    url: "../en/terms/2026-09-12"
+    url: "../../en/terms/2026-09-12"
 ---
 
-> A revised version takes effect on **2026-10-04** → [2026-10-04 version](../en/terms/2026-10-04)
+> A revised version takes effect on **2026-10-04** → [2026-10-04 version](../../en/terms/2026-10-04)
 
 This English version is a translation provided for convenience. If it differs from the Korean original, the Korean original prevails.
 

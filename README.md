@@ -14,12 +14,15 @@ Google Play Console · App Store Connect 의 개인정보처리방침 URL 로 �
 | `en/privacy` · `en/terms` | 영어판 (번역 — 다르면 한국어 원문이 우선) |
 | `privacy/<시행일>` · `terms/<시행일>` (+ `en/`) | 시행일별 모든 판 — 위쪽 드롭다운으로 판을 바꾼다 |
 | `changes?doc=privacy&from=<이전>&to=<이후>` (+ `en/`) | 두 판에서 **바뀐 줄만** 이전 · 이후로 |
+| `privacy/` · `terms/` (+ `en/`) | 끝에 `/` 를 붙인 주소 — 첫 페이지와 같은 판 (대표 주소는 `/privacy`, canonical) |
 | `/` · `/en/` · `index.html` | 예전 첫 주소 — `privacy` 로 넘어간다 (이미 적어 둔 곳이 끊기지 않게) |
 
 **주소에 `.html` 을 붙이지 않는다.** GitHub Pages 는 `/terms` 를 `terms.html` 로 돌려주고, 같은 이름의
 폴더(`terms/`)가 있어도 파일을 먼저 본다. 그래서 첫 페이지는 `privacy/index.md` 가 아니라 `privacy.md` 다 —
 폴더 index 로 두면 `/privacy` 가 `/privacy/` 로 한 번 더 넘어간다. 페이지 안 링크도 전부 `.html` 없이 쓴다.
-`terms.html` 처럼 붙여 적어도 같은 파일이라 그대로 열린다.
+`terms.html` 처럼 붙여 적어도 같은 파일이라 그대로 열린다. 끝에 `/` 를 붙이면 폴더로 가므로 폴더 안에도
+첫 페이지 사본(`privacy/index.md`)을 둔다 — 예전 사이트가 `/privacy` 를 `/privacy/` 로 301 했던 것을 브라우저가
+기억하고 있으면 사본이 없을 때 404 가 뜬다.
 
 ## 손으로 고치지 않는다
 
