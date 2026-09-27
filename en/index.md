@@ -1,15 +1,39 @@
 ---
-title: Privacy Policy · Nostra
+layout: policy
+root: "../"
+title: "Privacy Policy · Nostra"
+heading: "Privacy Policy"
+app: "Nostra"
 lang: en
+doc: privacy
+effective: "2026-09-12"
+effective_label: "2026-09-12"
+status: current
+status_label: "Current"
+other_doc: "Terms of Service"
+other_doc_url: "../en/terms.html"
+other_lang: "한국어"
+other_lang_url: "../index.html"
+effective_word: "Effective"
+contact_word: "Contact"
+contact: "psj06201@gmail.com"
+versions:
+  - date: "2026-11-01"
+    label: "2026-11-01"
+    status: upcoming
+    status_label: "Upcoming"
+    url: "../en/privacy/2026-11-01.html"
+  - date: "2026-10-04"
+    label: "2026-10-04"
+    status: upcoming
+    status_label: "Upcoming"
+    url: "../en/privacy/2026-10-04.html"
+  - date: "2026-09-12"
+    label: "2026-09-12"
+    status: current
+    status_label: "Current"
+    url: "../en/privacy/2026-09-12.html"
 ---
-
-**Nostra**
-
-# Privacy Policy
-
-[Terms of Service](../en/terms.html) · [한국어](../index.html)
-
-**Effective: 2026-09-12** (Current)
 
 > A revised version takes effect on **2026-10-04** → [2026-10-04 version](../en/privacy/2026-10-04.html)
 
@@ -80,13 +104,3 @@ If this policy changes, we will update both the text on this screen and the effe
 ## 8. Contact
 
 Please send privacy-related inquiries to the email address below.
-
----
-
-### All versions
-
-- [2026-11-01](../en/privacy/2026-11-01.html) — Upcoming
-- [2026-10-04](../en/privacy/2026-10-04.html) — Upcoming
-- [2026-09-12](../en/privacy/2026-09-12.html) — Current
-
-Contact: [psj06201@gmail.com](mailto:psj06201@gmail.com)

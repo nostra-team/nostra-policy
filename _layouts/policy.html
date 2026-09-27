@@ -1,0 +1,30 @@
+---
+layout: base
+---
+{%- comment -%}
+  시행일 선택 — <details> 라 스크립트 없이도 열리고, 항목은 그 판 페이지로 가는 진짜 링크다.
+  picker.js 는 바깥을 누르거나 Esc 를 누르면 닫는 것만 한다.
+{%- endcomment -%}
+<div class="bar">
+  <details class="picker">
+    <summary aria-label="{{ page.effective_word }}">
+      <span class="picker-value">{{ page.effective_label }}</span>
+      <span class="badge badge-{{ page.status }}">{{ page.status_label }}</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <ul class="picker-list">
+      {%- for v in page.versions %}
+      <li><a href="{{ v.url }}"{% if v.date == page.effective %} class="on" aria-current="page"{% endif %}>
+        <span>{{ v.label }}</span>{% if v.status != "past" %}<span class="badge badge-{{ v.status }}">{{ v.status_label }}</span>{% endif %}
+      </a></li>
+      {%- endfor %}
+    </ul>
+  </details>
+  {%- if page.compare_url %}
+  <a class="compare-link" href="{{ page.compare_url }}">{{ page.compare_label }} <span aria-hidden="true">→</span></a>
+  {%- endif %}
+</div>
+<article class="doc">
+{{ content }}
+</article>
+<script src="{{ page.root }}assets/picker.js" defer></script>

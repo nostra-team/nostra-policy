@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ page.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}</title>
+<link rel="stylesheet" href="{{ page.root }}assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="app">{{ page.app }}</div>
+  <h1>{{ page.heading }}</h1>
+  <div class="links">
+    {% if page.other_doc %}<a href="{{ page.other_doc_url }}">{{ page.other_doc }}</a> · {% endif %}<a href="{{ page.other_lang_url }}">{{ page.other_lang }}</a>
+  </div>
+</header>
+{{ content }}
+<footer>{{ page.contact_word }}: <a href="mailto:{{ page.contact }}">{{ page.contact }}</a></footer>
+</div>
+</body>
+</html>

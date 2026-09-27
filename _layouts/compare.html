@@ -1,0 +1,18 @@
+---
+layout: base
+---
+{%- comment -%}
+  변경 내용 비교 — ?doc=privacy&from=2026-10-04&to=2026-11-01
+  본문은 compare.js 가 data/<문서>/<시행일>[.en].json 두 개를 받아 조항 단위로 견준다.
+{%- endcomment -%}
+<div id="compare"
+     data-root="{{ page.root }}"
+     data-lang="{{ page.lang }}"
+     data-privacy="{{ page.privacy_word }}"
+     data-terms="{{ page.terms_word }}"
+     data-before="{{ page.before_word }}"
+     data-after="{{ page.after_word }}">
+  <noscript><p class="empty">{% if page.lang == "ko" %}이 화면은 자바스크립트가 필요합니다. 시행일별 판은 <a href="{{ page.back_url }}">방침 페이지</a>의 시행일 목록에서 볼 수 있습니다.{% else %}This page needs JavaScript. Each version is listed on the <a href="{{ page.back_url }}">policy page</a>.{% endif %}</p></noscript>
+</div>
+<script src="{{ page.root }}assets/picker.js" defer></script>
+<script src="{{ page.root }}assets/compare.js" defer></script>
