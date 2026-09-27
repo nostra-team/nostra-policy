@@ -2,7 +2,7 @@
 #
 # "오늘 효력 있는 판" 은 만든 날 기준이라 **매일** 다시 만든다 — 새 판의 시행일이 되면
 # 그날 첫 페이지(index.md · terms.md)가 그 판으로 바뀐다. 원본은 nostra-data 의 공개 판
-# (legal/)이라 비밀 키가 필요 없다. 바뀐 게 있을 때만 커밋한다.
+# (legal/)이라 비밀 키가 필요 없다. 바뀐 게 있을 때만 커밋한다 (md · data/ — assets/*.js 는 gitignore).
 name: Pages · policy
 
 on:
@@ -26,17 +26,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: '3.11'
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      # 타입이 어긋난 채로 배포하지 않는다 — 빌드 스크립트는 타입을 지우고만 돌리므로 여기서 본다
+      - run: npm run typecheck
       - name: Build markdown from published legal versions
-        run: python3 scripts/build.py
+        run: npm run build
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git diff --cached --quiet || { git commit -m "docs: 방침·약관 페이지 갱신 ($(TZ=Asia/Seoul date +%F))"; git push; }
+      # 브라우저 스크립트(src/*.ts → assets/*.js)는 커밋하지 않는다 — 배포 직전에 만든다
+      - run: npm run build:assets
       - uses: actions/configure-pages@v5
       - uses: actions/jekyll-build-pages@v1
         with:

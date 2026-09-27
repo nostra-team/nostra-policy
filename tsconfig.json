@@ -1,0 +1,21 @@
+{
+  // 타입 검사 전용 — 빌드 스크립트(Node 가 타입만 지우고 돌린다)와 브라우저 스크립트를 함께 본다.
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": true,
+    // node --experimental-strip-types 가 돌릴 수 있는 문법만 (enum·namespace·매개변수 속성 금지)
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "include": ["scripts/**/*.ts", "src/**/*.ts"]
+}

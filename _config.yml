@@ -7,4 +7,10 @@ kramdown:
   auto_ids: true
 exclude:
   - scripts
+  - src
+  - node_modules
+  - package.json
+  - package-lock.json
+  - tsconfig.json
+  - tsconfig.assets.json
   - README.md

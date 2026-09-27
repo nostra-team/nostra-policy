@@ -1,0 +1,17 @@
+{
+  // 브라우저 스크립트 → assets/*.js. import 가 없는 일반 스크립트라 번들러가 필요 없다.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": [],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "rootDir": "src",
+    "outDir": "assets",
+    "removeComments": false,
+    "sourceMap": false
+  },
+  "include": ["src/**/*.ts"]
+}

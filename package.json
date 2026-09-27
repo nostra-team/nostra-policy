@@ -1,0 +1,17 @@
+{
+  "name": "nostra-policy",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "build": "node --experimental-strip-types --no-warnings=ExperimentalWarning scripts/build.ts",
+    "build:assets": "tsc -p tsconfig.assets.json",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.4",
+    "typescript": "7.0.2"
+  }
+}
