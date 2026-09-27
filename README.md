@@ -9,11 +9,17 @@ Google Play Console · App Store Connect 의 개인정보처리방침 URL 로 �
 
 | 주소 | 내용 |
 |---|---|
-| https://nostra-team.github.io/nostra-policy/ | 개인정보처리방침 — **오늘 효력 있는 판** (스토어에 넣는 주소) |
-| https://nostra-team.github.io/nostra-policy/terms.html | 이용약관 — 오늘 효력 있는 판 |
-| `en/` · `en/terms.html` | 영어판 (번역 — 다르면 한국어 원문이 우선) |
-| `privacy/<시행일>.html` · `terms/<시행일>.html` (+ `en/`) | 시행일별 모든 판 — 위쪽 드롭다운으로 판을 바꾼다 |
-| `changes.html?doc=privacy&from=<이전>&to=<이후>` (+ `en/`) | 두 판에서 **바뀐 줄만** 이전 · 이후로 |
+| https://nostra-team.github.io/nostra-policy/privacy | 개인정보처리방침 — **오늘 효력 있는 판** (스토어에 넣는 주소) |
+| https://nostra-team.github.io/nostra-policy/terms | 이용약관 — 오늘 효력 있는 판 |
+| `en/privacy` · `en/terms` | 영어판 (번역 — 다르면 한국어 원문이 우선) |
+| `privacy/<시행일>` · `terms/<시행일>` (+ `en/`) | 시행일별 모든 판 — 위쪽 드롭다운으로 판을 바꾼다 |
+| `changes?doc=privacy&from=<이전>&to=<이후>` (+ `en/`) | 두 판에서 **바뀐 줄만** 이전 · 이후로 |
+| `/` · `/en/` · `index.html` | 예전 첫 주소 — `privacy` 로 넘어간다 (이미 적어 둔 곳이 끊기지 않게) |
+
+**주소에 `.html` 을 붙이지 않는다.** GitHub Pages 는 `/terms` 를 `terms.html` 로 돌려주고, 같은 이름의
+폴더(`terms/`)가 있어도 파일을 먼저 본다. 그래서 첫 페이지는 `privacy/index.md` 가 아니라 `privacy.md` 다 —
+폴더 index 로 두면 `/privacy` 가 `/privacy/` 로 한 번 더 넘어간다. 페이지 안 링크도 전부 `.html` 없이 쓴다.
+`terms.html` 처럼 붙여 적어도 같은 파일이라 그대로 열린다.
 
 ## 손으로 고치지 않는다
 
@@ -46,7 +52,7 @@ shared/legal (nostra) ──CI──▶ nostra-data/legal (공개 JSON) ──bu
 
 ### 변경 내용 비교
 
-`changes.html` 은 `data/<문서>/<시행일>[.en].json` (페이지와 같은 글자) 두 개를 받아:
+`changes` 는 `data/<문서>/<시행일>[.en].json` (페이지와 같은 글자) 두 개를 받아:
 
 1. 판을 줄(조항 제목 · 문단 · 목록 한 줄) 단위로 펴고 LCS 로 맞댄다.
 2. 바뀐 줄 덩어리 안에서 지운 줄 · 더한 줄을 짝짓는다 — 낱말이 40% 넘게 같으면 **수정**, 아니면 **삭제** · **추가**.
@@ -65,6 +71,7 @@ npm run build -- --today 2026-11-01    # 그날 기준으로 미리 보기
 npm run typecheck                      # 빌드 스크립트 + 화면 스크립트 타입 검사
 npm run build:assets                   # src/*.ts → assets/*.js
 
-# 미리 보기 (Jekyll 이 있을 때)
-jekyll build && python3 -m http.server -d _site
+# 미리 보기 (Jekyll 이 있을 때). 로컬 서버는 같은 이름의 폴더를 먼저 봐서 /privacy 가 /privacy/ 로 넘어간다 —
+# 로컬에서는 /privacy.html 로 연다. GitHub Pages 는 파일을 먼저 본다 (/terms → terms.html, 실측).
+jekyll serve   # http://127.0.0.1:4000/privacy.html
 ```
