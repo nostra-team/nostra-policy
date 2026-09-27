@@ -12,6 +12,7 @@
  *     privacy/<시행일>.md · terms/<시행일>.md (+ en/)   시행일별 모든 판 → /privacy/<시행일>
  *     data/<문서>/<시행일>[.en].json · data/index.json   비교 화면이 읽는 원본
  *     changes.md · en/changes.md    비교 화면 → /changes (본문은 src/compare.ts)
+ *     privacy/index.md · terms/index.md (+ en/)   /privacy/ 처럼 끝에 / 를 붙인 주소 — 첫 페이지와 같은 판
  *     index.md · en/index.md        예전 첫 주소(/ · /en/) — /privacy 로 보낸다
  *
  * 주소에 .html 을 붙이지 않는다. GitHub Pages 는 /terms 를 terms.html 로 돌려주고, 같은 이름의
@@ -32,6 +33,7 @@ import { parseArgs } from 'node:util';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://nostra-team.github.io/nostra-data/legal';
 const CONTACT = 'psj06201@gmail.com';
+const SITE = 'https://nostra-team.github.io/nostra-policy/';
 
 type Lang = 'ko' | 'en';
 
@@ -151,6 +153,8 @@ const page = (
     `contact_word: ${yq(t.contact)}`,
     `contact: ${yq(CONTACT)}`,
   ];
+  // 첫 페이지는 두 곳(/privacy · /privacy/)에 있다 — 검색엔진에는 .html 없는 쪽이 대표라고 알린다
+  if (isFront) fm.push(`canonical: ${yq(SITE + langdir + doc)}`);
   if (older.length) {
     // 바로 앞 판과 견준다 — 개정 고지에서 사람들이 묻는 것이 "무엇이 바뀌었나" 다
     fm.push(`compare_label: ${yq(t.compare)}`,
@@ -231,8 +235,11 @@ const main = async (): Promise<number> => {
         // 비교 화면이 읽는 원본 — 페이지와 같은 글자를 같은 곳에서 (CDN 이 바뀌어도 이 사본과 견준다)
         put(join(ROOT, 'data', doc, `${d}${suffix}.json`), jsonFile(blocks));
       }
-      const front = join(base, `${doc}.md`);
-      put(front, page(doc, lang, cur, texts.get(cur)!, dates, today, lang === 'ko' ? 0 : 1, true));
+      const depth = lang === 'ko' ? 0 : 1;
+      put(join(base, `${doc}.md`), page(doc, lang, cur, texts.get(cur)!, dates, today, depth, true));
+      // /privacy/ (끝에 / 를 붙였거나, 예전 사이트의 /privacy → /privacy/ 301 을 브라우저가 기억한 경우)도
+      // 같은 판을 연다. 폴더 안이라 상대 주소만 한 단계 깊다.
+      put(join(base, doc, 'index.md'), page(doc, lang, cur, texts.get(cur)!, dates, today, depth + 1, true));
     }
   }
   put(join(ROOT, 'data', 'index.json'), jsonFile(listing));

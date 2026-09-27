@@ -1,6 +1,6 @@
 ---
 layout: policy
-root: ""
+root: "../"
 title: "이용약관 · Nostra"
 heading: "이용약관"
 app: "Nostra - 로또의 모든것"
@@ -11,9 +11,9 @@ effective_label: "2026. 09. 12"
 status: current
 status_label: "현행"
 other_doc: "개인정보처리방침"
-other_doc_url: "privacy"
+other_doc_url: "../privacy"
 other_lang: "English"
-other_lang_url: "en/terms"
+other_lang_url: "../en/terms"
 effective_word: "시행일"
 contact_word: "문의"
 contact: "psj06201@gmail.com"
@@ -23,20 +23,20 @@ versions:
     label: "2026. 11. 01"
     status: upcoming
     status_label: "시행 예정"
-    url: "terms/2026-11-01"
+    url: "../terms/2026-11-01"
   - date: "2026-10-04"
     label: "2026. 10. 04"
     status: upcoming
     status_label: "시행 예정"
-    url: "terms/2026-10-04"
+    url: "../terms/2026-10-04"
   - date: "2026-09-12"
     label: "2026. 09. 12"
     status: current
     status_label: "현행"
-    url: "terms/2026-09-12"
+    url: "../terms/2026-09-12"
 ---
 
-> 개정판이 **2026-10-04** 부터 시행됩니다 → [2026-10-04 판](terms/2026-10-04)
+> 개정판이 **2026-10-04** 부터 시행됩니다 → [2026-10-04 판](../terms/2026-10-04)
 
 본 약관은 Nostra(이하 "앱") 이용에 관한 이용자와 운영자 간의 권리·의무 및 책임 사항을 정합니다.
 

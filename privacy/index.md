@@ -1,6 +1,6 @@
 ---
 layout: policy
-root: ""
+root: "../"
 title: "개인정보처리방침 · Nostra"
 heading: "개인정보처리방침"
 app: "Nostra - 로또의 모든것"
@@ -11,9 +11,9 @@ effective_label: "2026. 09. 12"
 status: current
 status_label: "현행"
 other_doc: "이용약관"
-other_doc_url: "terms"
+other_doc_url: "../terms"
 other_lang: "English"
-other_lang_url: "en/privacy"
+other_lang_url: "../en/privacy"
 effective_word: "시행일"
 contact_word: "문의"
 contact: "psj06201@gmail.com"
@@ -23,20 +23,20 @@ versions:
     label: "2026. 11. 01"
     status: upcoming
     status_label: "시행 예정"
-    url: "privacy/2026-11-01"
+    url: "../privacy/2026-11-01"
   - date: "2026-10-04"
     label: "2026. 10. 04"
     status: upcoming
     status_label: "시행 예정"
-    url: "privacy/2026-10-04"
+    url: "../privacy/2026-10-04"
   - date: "2026-09-12"
     label: "2026. 09. 12"
     status: current
     status_label: "현행"
-    url: "privacy/2026-09-12"
+    url: "../privacy/2026-09-12"
 ---
 
-> 개정판이 **2026-10-04** 부터 시행됩니다 → [2026-10-04 판](privacy/2026-10-04)
+> 개정판이 **2026-10-04** 부터 시행됩니다 → [2026-10-04 판](../privacy/2026-10-04)
 
 Nostra(이하 "앱")은 이용자의 개인정보를 소중히 다루며, 개인정보 보호법 등 관련 법령을 준수합니다.
 
