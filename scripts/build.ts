@@ -7,11 +7,16 @@
  * 원본은 앱 레포(nostra-team/nostra)의 `shared/legal/` 이고, 그 수집 CI 가 nostra-data 로 올린다.
  * 이 레포는 **공개된 판만 읽으므로** 비밀 키가 필요 없다. 앱 안의 방침과 같은 글자다.
  *
- *     index.md · terms.md           오늘 효력 있는 판 (Play Console · App Store 에 넣는 주소)
- *     en/index.md · en/terms.md     영어판
- *     privacy/<시행일>.md · terms/<시행일>.md (+ en/)   시행일별 모든 판
- *     data/<문서>/<시행일>[.en].json · data/index.json   비교 화면(changes.html)이 읽는 원본
- *     changes.md · en/changes.md    비교 화면 (본문은 src/compare.ts)
+ *     privacy.md · terms.md         오늘 효력 있는 판 → /privacy · /terms (Play Console · App Store 에 넣는 주소)
+ *     en/privacy.md · en/terms.md   영어판 → /en/privacy · /en/terms
+ *     privacy/<시행일>.md · terms/<시행일>.md (+ en/)   시행일별 모든 판 → /privacy/<시행일>
+ *     data/<문서>/<시행일>[.en].json · data/index.json   비교 화면이 읽는 원본
+ *     changes.md · en/changes.md    비교 화면 → /changes (본문은 src/compare.ts)
+ *     index.md · en/index.md        예전 첫 주소(/ · /en/) — /privacy 로 보낸다
+ *
+ * 주소에 .html 을 붙이지 않는다. GitHub Pages 는 /terms 를 terms.html 로 돌려주고, 같은 이름의
+ * 폴더(terms/)가 있어도 파일을 먼저 본다. 그래서 첫 페이지는 폴더 안 index 가 아니라 privacy.md 다
+ * (폴더 index 면 /privacy → /privacy/ 로 한 번 더 넘어간다).
  *
  * "오늘 효력 있는 판" 은 만든 날 기준이다 — 그래서 `.github/workflows/pages.yml` 이 **매일** 다시 만든다.
  * 시행일이 되면 그날 새 판이 첫 페이지로 올라간다.
@@ -120,7 +125,7 @@ const page = (
   const cur = currentOf(dates, today);
   const langdir = lang === 'ko' ? '' : 'en/';
   const other = lang === 'ko' ? 'en/' : '';
-  const link = (d: string): string => `${up}${langdir}${doc}/${d}.html`;
+  const link = (d: string): string => `${up}${langdir}${doc}/${d}`;
   const status = (d: string): VersionStatus => statusOf(d, cur, today);
   const older = dates.filter((d) => d < eff);
   const otherDoc: LegalDoc = doc === 'privacy' ? 'terms' : 'privacy';
@@ -139,9 +144,9 @@ const page = (
     `status: ${status(eff)}`,
     `status_label: ${yq(t[status(eff)])}`,
     `other_doc: ${yq(t[otherDoc])}`,
-    `other_doc_url: ${yq(up + langdir + (doc === 'privacy' ? 'terms.html' : 'index.html'))}`,
+    `other_doc_url: ${yq(up + langdir + otherDoc)}`,
     `other_lang: ${yq(t.other)}`,
-    `other_lang_url: ${yq(up + other + (doc === 'privacy' ? 'index.html' : 'terms.html'))}`,
+    `other_lang_url: ${yq(up + other + doc)}`,
     `effective_word: ${yq(t.effective)}`,
     `contact_word: ${yq(t.contact)}`,
     `contact: ${yq(CONTACT)}`,
@@ -149,7 +154,7 @@ const page = (
   if (older.length) {
     // 바로 앞 판과 견준다 — 개정 고지에서 사람들이 묻는 것이 "무엇이 바뀌었나" 다
     fm.push(`compare_label: ${yq(t.compare)}`,
-      `compare_url: ${yq(`${up}${langdir}changes.html?doc=${doc}&from=${older[0]}&to=${eff}`)}`);
+      `compare_url: ${yq(`${up}${langdir}changes?doc=${doc}&from=${older[0]}&to=${eff}`)}`);
   }
   fm.push('versions:');
   for (const d of dates) {
@@ -173,12 +178,15 @@ const comparePage = (lang: Lang, depth: number): string => {
   const fm: Record<string, string> = {
     layout: 'compare', title: `${t.compareTitle} · Nostra`, heading: t.compareTitle,
     app: t.app, lang, root: up, privacy_word: t.privacy, terms_word: t.terms,
-    before_word: t.before, after_word: t.after, back_url: up + (lang === 'ko' ? '' : 'en/') + 'index.html',
-    other_lang: t.other, other_lang_url: up + (lang === 'ko' ? 'en/' : '') + 'changes.html',
+    before_word: t.before, after_word: t.after, back_url: up + (lang === 'ko' ? '' : 'en/') + 'privacy',
+    other_lang: t.other, other_lang_url: up + (lang === 'ko' ? 'en/' : '') + 'changes',
     contact_word: t.contact, contact: CONTACT,
   };
   return '---\n' + Object.entries(fm).map(([k, v]) => `${k}: ${yq(v)}\n`).join('') + '---\n';
 };
+
+/** 예전 주소에서 새 주소로 — 스크립트 없이도 넘어가게 meta refresh 와 링크를 같이 둔다 */
+const redirectPage = (to: string): string => `---\nlayout: redirect\nto: ${yq(to)}\n---\n`;
 
 /** Python json.dumps(indent=1) 과 같은 모양 — 한 칸 들여쓰기, 끝에 줄바꿈 */
 const jsonFile = (value: unknown): string => JSON.stringify(value, null, 1) + '\n';
@@ -223,12 +231,15 @@ const main = async (): Promise<number> => {
         // 비교 화면이 읽는 원본 — 페이지와 같은 글자를 같은 곳에서 (CDN 이 바뀌어도 이 사본과 견준다)
         put(join(ROOT, 'data', doc, `${d}${suffix}.json`), jsonFile(blocks));
       }
-      const front = join(base, doc === 'privacy' ? 'index.md' : 'terms.md');
+      const front = join(base, `${doc}.md`);
       put(front, page(doc, lang, cur, texts.get(cur)!, dates, today, lang === 'ko' ? 0 : 1, true));
     }
   }
   put(join(ROOT, 'data', 'index.json'), jsonFile(listing));
   put(join(ROOT, 'changes.md'), comparePage('ko', 0));
+  // 예전 첫 주소 — 스토어·앱에 이미 적힌 / 와 /en/ 이 끊기지 않게
+  put(join(ROOT, 'index.md'), redirectPage('privacy'));
+  put(join(ROOT, 'en', 'index.md'), redirectPage('privacy'));
   put(join(ROOT, 'en', 'changes.md'), comparePage('en', 1));
   for (const p of written) console.log(`→ ${relative(ROOT, p)}`);
   return 0;

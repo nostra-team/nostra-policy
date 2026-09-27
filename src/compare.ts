@@ -1,6 +1,6 @@
 // 변경 내용 비교 — 두 판의 조항을 줄(제목·문단·목록 한 줄) 단위로 맞대고, 바뀐 줄만 이전·이후로 보여 준다.
 //
-//   changes.html?doc=privacy&from=2026-10-04&to=2026-11-01
+//   changes?doc=privacy&from=2026-10-04&to=2026-11-01
 //
 // 원본은 scripts/build.ts 가 페이지와 함께 쓴 data/<문서>/<시행일>[.en].json — 페이지에 보이는 글자와 같다.
 // 줄 맞대기는 LCS, 한 줄 안에서는 낱말 단위 LCS 로 지운 말·더한 말을 칠한다.
@@ -203,7 +203,7 @@
     const to = state.to ?? '';
     history.replaceState(null, '', `?doc=${state.doc}&from=${from}&to=${to}`);
 
-    const fullUrl = `${base}${en ? 'en/' : ''}${state.doc}/${to}.html`;
+    const fullUrl = `${base}${en ? 'en/' : ''}${state.doc}/${to}`;
     root.innerHTML =
       '<div class="tabs" role="group">' + (['privacy', 'terms'] as const).map((d) =>
         `<button type="button" data-doc="${d}" aria-pressed="${d === state.doc}">${esc(ds[d])}</button>`,
