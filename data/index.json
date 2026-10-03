@@ -6,11 +6,11 @@
   },
   {
    "date": "2026-10-04",
-   "status": "upcoming"
+   "status": "current"
   },
   {
    "date": "2026-09-12",
-   "status": "current"
+   "status": "past"
   }
  ],
  "terms": [
@@ -20,11 +20,11 @@
   },
   {
    "date": "2026-10-04",
-   "status": "upcoming"
+   "status": "current"
   },
   {
    "date": "2026-09-12",
-   "status": "current"
+   "status": "past"
   }
  ]
 }

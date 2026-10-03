@@ -6,8 +6,8 @@ heading: "Terms of Service"
 app: "Nostra"
 lang: en
 doc: terms
-effective: "2026-09-12"
-effective_label: "2026-09-12"
+effective: "2026-10-04"
+effective_label: "2026-10-04"
 status: current
 status_label: "Current"
 other_doc: "Privacy Policy"
@@ -18,6 +18,8 @@ effective_word: "Effective"
 contact_word: "Contact"
 contact: "psj06201@gmail.com"
 canonical: "https://nostra-team.github.io/nostra-policy/en/terms"
+compare_label: "What changed from the previous version"
+compare_url: "../../en/changes?doc=terms&from=2026-09-12&to=2026-10-04"
 versions:
   - date: "2026-11-01"
     label: "2026-11-01"
@@ -26,17 +28,17 @@ versions:
     url: "../../en/terms/2026-11-01"
   - date: "2026-10-04"
     label: "2026-10-04"
-    status: upcoming
-    status_label: "Upcoming"
+    status: current
+    status_label: "Current"
     url: "../../en/terms/2026-10-04"
   - date: "2026-09-12"
     label: "2026-09-12"
-    status: current
-    status_label: "Current"
+    status: past
+    status_label: "Previous"
     url: "../../en/terms/2026-09-12"
 ---
 
-> A revised version takes effect on **2026-10-04** → [2026-10-04 version](../../en/terms/2026-10-04)
+> A revised version takes effect on **2026-11-01** → [2026-11-01 version](../../en/terms/2026-11-01)
 
 This English version is a translation provided for convenience. If it differs from the Korean original, the Korean original prevails.
 
@@ -44,7 +46,7 @@ These Terms set out the rights, obligations and responsibilities between users a
 
 ## Article 1 (Purpose)
 
-The purpose of these Terms is to set out the matters necessary for users' use of the App.
+The purpose of these Terms is to set out the matters necessary for users' use of the App and the App's paid products.
 
 ## Article 2 (Services)
 
@@ -55,11 +57,12 @@ The App provides the following features.
 - Checking for wins against published draw data
 - Displaying the results of statistical tests of each method's performance
 - Looking up 1st- and 2nd-prize winning stores by draw
-- Rewarded ads — used to increase the number of daily draws
+- Ads — banner ads at the bottom of the screen, and rewarded ads that increase the number of daily draws
+- Paid products — the "Nostra+" subscription and the one-time purchase "Just remove ads" (Article 6)
 
 ## Article 3 (Eligibility)
 
-Anyone can use the App without signing up.
+The App can be used without signing up and is intended for persons aged 19 or older.
 
 Only persons aged 19 or older may purchase lottery tickets, and the App does not sell lottery tickets or purchase them on anyone's behalf.
 
@@ -67,26 +70,67 @@ Only persons aged 19 or older may purchase lottery tickets, and the App does not
 
 All numbers and statistics provided by the App are for reference only and do not guarantee a win. Lotto and the Pension Lottery are random draws.
 
-The App does not claim that any method is better than chance. On the contrary, the statistics screen shows as-is whether each method's results can be distinguished from chance.
+The App does not claim that any method is better than chance. On the contrary, the statistics screen shows as-is whether each method's results can be distinguished from chance. Paid products do not change the outcome of the numbers either.
 
-The Operator is not responsible for any gains or losses arising from lottery purchases or their results. Please be careful about excessive purchasing and gambling addiction.
+Please be careful about excessive lottery purchasing and gambling addiction.
 
-## Article 5 (Copyright and Rights)
+## Article 5 (Ads)
+
+- Users who have not purchased a paid product see banner ads at the bottom of the tab screens, and rewarded ads are played when the user chooses. No ads are shown on the payment screen or the terms screens.
+- The reward for a rewarded ad (extra draws) is granted after the ad has been watched to the end, and may not be granted if the ad fails to load. Rewards have no cash value and cannot be transferred to others.
+- No ads are shown to users who have purchased a subscription or "Just remove ads". Processing of information related to ads follows the Privacy Policy.
+
+## Article 6 (Paid Products)
+
+- Subscription "Nostra+" (monthly, yearly, etc.) — ad removal, unlimited draws, and alerts for nearby 1st- and 2nd-prize winning stores (Article 6-2)
+- One-time purchase "Just remove ads" — ad removal. Once paid, it applies with no time limit and is not charged again automatically.
+- The price, period and contents of each product are as shown on the purchase screen.
+- Payment is made through in-app purchase on the Apple App Store or Google Play, and the terms of the relevant store also apply to payment and billing.
+- If you change devices or reinstall the App, you can restore purchases made with the same store account using [Restore purchases].
+
+## Article 6-2 (Winning Store Alerts)
+
+- Winning store alerts is a feature that notifies you of newly published Lotto and Pension Lottery winning stores that match the prize tier you chose (1st-prize stores only, 2nd-prize stores only, or both) and that are located in the neighborhood you chose (province/city, city/county/district) or within a radius (2–20 km, set by you) of a location you set.
+- Winning stores are published by the lottery issuer a few days after the draw, and alerts are delivered after publication when you open the App or when your device permits background checks. Delivery immediately upon publication is not guaranteed, and alerts are not delivered if notification permission is turned off on your device.
+- The location radius is optional. Your location is read only once when you set it, reduced to a precision of about 1 km, and stored only on your device; it is not sent to the Operator.
+- Winning store information is for reference only. There is no evidence that any particular retailer produces winners more often, and the draw has nothing to do with the retailer.
+- When your subscription ends, the alerts stop. The criteria you chose remain on your device, so you can continue using them if you subscribe again.
+
+## Article 7 (Automatic Renewal and Cancellation of Subscriptions)
+
+- Unless cancelled, a subscription is automatically renewed at the end of its period for the same period and price, and if it is not cancelled at least 24 hours before the renewal date, the fee is charged to your store account.
+- If there is a free trial or discounted price, its period and the price after it ends are shown on the purchase screen. If you cancel before the trial ends, you will not be charged.
+- If the subscription price is increased or a free subscription is converted to a paid one, the Operator will, in accordance with applicable laws, notify you in advance of the prices before and after the change, obtain your consent, and also explain how to cancel. If you do not consent, the subscription will not be renewed at the increased price.
+- You can cancel in iOS [Settings > Apple ID > Subscriptions] or Android [Play Store > Payments & subscriptions > Subscriptions], and you can go there directly from [Nostra+ > Manage subscription] in the App.
+- Once you cancel, you will not be charged from the next payment onward, and you can continue to use the service until the end of the period you have already paid for. Refunds during the period follow Article 8.
+
+## Article 8 (Withdrawal of Purchase (Cancellation) and Refunds)
+
+- Users may withdraw their purchase (cancel it) within 7 days from the date of purchase.
+- However, since paid products are digital content that takes effect immediately upon purchase, withdrawal of the purchase (cancellation) may be restricted once use has begun, pursuant to Article 17(2)5 of the Act on Consumer Protection in Electronic Commerce. The Operator indicates this on the purchase screen and lets users try the paid features in advance through the free basic features, free trials and rewarded ads.
+- If you have not used the paid features after purchase, or if the product differs from what was displayed or advertised or was performed differently from the contract, you may withdraw your purchase (cancel it) within 3 months from the date you received the product, or within 30 days from the date you became aware of that fact.
+- Refunds follow the procedures of the store where you paid (Apple: reportaproblem.apple.com / Google: Play Store order history). If the matter is not resolved through the store's procedures, or if you want a refund due to cancellation during a subscription period, you may contact us at the email address below, and the Operator will take the necessary measures in accordance with applicable laws.
+
+## Article 9 (Payments by Minors)
+
+If a minor makes a payment without the consent of their legal guardian, the minor or the legal guardian may cancel that contract. However, it cannot be cancelled if the minor used deception to make others believe they were an adult, or if the payment was made within the scope of property that the legal guardian permitted the minor to dispose of (Articles 5, 6 and 17 of the Civil Act).
+
+## Article 10 (Copyright and Rights)
 
 - Official draw data and winning store information are public materials of the lottery issuer.
 - The Operator holds the copyright in the App's design, code and text.
 - The App is not affiliated with the lottery issuer and does not use the issuer's trademarks or logos.
 
-## Article 6 (User Obligations)
+## Article 11 (User Obligations)
 
 Users must not engage in the following acts.
 
-- Reverse-engineering or modifying the App and redistributing it
-- Obtaining rewards by automatically manipulating ads
+- Reverse-engineering or modifying the App and redistributing it, or using paid features by bypassing payment
+- Obtaining rewards by automatically manipulating ads or clicking them fraudulently
 - Calling the public data the App reads in abnormally large volumes
 - Acts that violate applicable laws
 
-## Article 7 (Service Suspension)
+## Article 12 (Changes to and Suspension of the Service)
 
 The Operator may suspend all or part of the service in the following cases.
 
@@ -95,20 +139,26 @@ The Operator may suspend all or part of the service in the following cases.
 
 Draw data may not always be updated on time. In that case, the App shows on screen that the data is delayed — if the data is out of date and no such notice is shown, please treat it as an error.
 
-## Article 8 (Limitation of Liability)
+If the Operator removes a feature of a paid product or terminates the service, it will give notice in the App 30 days in advance, and will provide refunds for any subscription period that can no longer be used, in accordance with applicable laws.
 
-- The App operates based on data saved by users themselves and published draw data.
-- The Operator is not liable for damages arising in the course of using the free services, unless caused by the Operator's intent or gross negligence.
-- Results may differ due to response delays or errors at external data providers.
+## Article 13 (Limitation of Liability)
 
-## Article 9 (Changes to These Terms)
+- The App operates based on data saved by users themselves and published draw data. Results may differ due to response delays or errors at external data providers.
+- Generated numbers are for reference only, and the Operator is not liable for gains or losses arising from lottery purchases and their results, unless caused by the Operator's intent or gross negligence.
+- Damages caused by defects in paid products are governed by applicable laws.
 
-If these Terms change, the Operator will update both the text on this screen and the effective date shown at the top, and will announce the change through an App update. Important changes will be announced 7 days before the effective date, and if you do not agree to the changed Terms, you may stop using the App.
+## Article 14 (Changes to These Terms)
 
-## Article 10 (Dispute Resolution)
+If these Terms are changed, the revised version will be posted on this screen as "Upcoming" starting 7 days before the effective date (30 days before for changes that are unfavorable to users or important). If you do not agree to the changes, you may stop using the App and cancel your subscription.
 
-Disputes concerning these Terms are governed by the laws of the Republic of Korea, and the competent court is the court having jurisdiction over the Operator's address.
+## Article 15 (Dispute Resolution)
+
+Disputes concerning these Terms are governed by the laws of the Republic of Korea, and the competent court is determined under the Civil Procedure Act. Users may apply for mediation to consumer dispute mediation bodies such as the Korea Consumer Agency (dial 1372 with no area code).
+
+## Article 16 (Operator Information)
+
+Operator: Sangjin Park (individual developer). All inquiries are received at the email address below.
 
 ## Contact
 
-Please send inquiries about these Terms to the email address below.
+Please send inquiries about these Terms or payments to the email address below.
