@@ -6,8 +6,8 @@ heading: "Terms of Service"
 app: "Nostra"
 lang: en
 doc: terms
-effective: "2026-10-04"
-effective_label: "2026-10-04"
+effective: "2026-11-01"
+effective_label: "2026-11-01"
 status: current
 status_label: "Current"
 other_doc: "Privacy Policy"
@@ -18,25 +18,15 @@ effective_word: "Effective"
 contact_word: "Contact"
 contact: "psj06201@gmail.com"
 canonical: "https://nostra-team.github.io/nostra-policy/en/terms"
-compare_label: "What changed from the previous version"
-compare_url: "../../en/changes?doc=terms&from=2026-09-12&to=2026-10-04"
 versions:
   - date: "2026-11-01"
     label: "2026-11-01"
-    status: upcoming
-    status_label: "Upcoming"
-    url: "../../en/terms/2026-11-01"
-  - date: "2026-10-04"
-    label: "2026-10-04"
     status: current
     status_label: "Current"
-    url: "../../en/terms/2026-10-04"
-  - date: "2026-09-12"
-    label: "2026-09-12"
-    status: past
-    status_label: "Previous"
-    url: "../../en/terms/2026-09-12"
+    url: "../../en/terms/2026-11-01"
 ---
+
+> This version is not yet in effect. It applies from its effective date.
 
 > A revised version takes effect on **2026-11-01** → [2026-11-01 version](../../en/terms/2026-11-01)
 
@@ -52,11 +42,12 @@ The purpose of these Terms is to set out the matters necessary for users' use of
 
 The App provides the following features.
 
-- Number generation for Lotto 6/45 and Pension Lottery 720+ (multiple methods)
-- Recording and storing generated numbers and purchased tickets (QR scan or manual entry)
-- Checking for wins against published draw data
+- Lotto 6/45 and Pension Lottery 720+ number generation (several methods · the daily draw limit is shared by both games)
+- Recording and keeping generated numbers and purchased tickets (QR scan and manual entry), and checking them against published draw data
 - Displaying the results of statistical tests of each method's performance
-- Looking up 1st- and 2nd-prize winning stores by draw
+- Purchase ledger — totals of purchased tickets and manually entered spending and prizes, a monthly budget, and prize-claimed marks (Article 6-3)
+- Looking up 1st and 2nd prize winning stores, and winning store news for your area (Article 6-2)
+- Exporting, importing and deleting all records
 - Ads — banner ads at the bottom of the screen, and rewarded ads that increase the number of daily draws
 - Paid products — the "Nostra+" subscription and the one-time purchase "Just remove ads" (Article 6)
 
@@ -90,11 +81,18 @@ Please be careful about excessive lottery purchasing and gambling addiction.
 
 ## Article 6-2 (Winning Store Alerts)
 
-- Winning store alerts is a feature that notifies you of newly published Lotto and Pension Lottery winning stores that match the prize tier you chose (1st-prize stores only, 2nd-prize stores only, or both) and that are located in the neighborhood you chose (province/city, city/county/district) or within a radius (2–20 km, set by you) of a location you set.
+- Winning store alerts is a feature that notifies you of newly published Lotto and Pension Lottery winning stores that match the prize tier you chose (1st-prize stores only, 2nd-prize stores only, or both) and that are located in the neighborhood you chose (province/city, city/county/district) or within a radius (2–20 km, set by you) of a location you set. News of winning stores matching the chosen criteria can be viewed in the [Nearby] tab without a subscription; only the alerts are a subscription benefit.
 - Winning stores are published by the lottery issuer a few days after the draw, and alerts are delivered after publication when you open the App or when your device permits background checks. Delivery immediately upon publication is not guaranteed, and alerts are not delivered if notification permission is turned off on your device.
 - The location radius is optional. Your location is read only once when you set it, reduced to a precision of about 1 km, and stored only on your device; it is not sent to the Operator.
 - Winning store information is for reference only. There is no evidence that any particular retailer produces winners more often, and the draw has nothing to do with the retailer.
 - When your subscription ends, the alerts stop. The criteria you chose remain on your device, so you can continue using them if you subscribe again.
+
+## Article 6-3 (Purchase Ledger)
+
+- The ledger is reference material calculated only from what the user registers or enters. The Operator does not verify the user's actual purchases or prize receipts.
+- After-tax amounts, amounts received from pension-style prizes, and guidance on where and by when to claim prizes are reference calculations to aid understanding. Actual taxes and payout procedures follow the relevant laws and the lottery issuer's guidance.
+- The monthly budget is a goal the user sets for themselves; the App does not block purchases.
+- Ledger records are stored only on this device and can be moved with [Export records] before changing devices.
 
 ## Article 7 (Automatic Renewal and Cancellation of Subscriptions)
 
